@@ -42,7 +42,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- RestAssured. Без scope=test, т.к. используется в src/main/java (клиенты) -->
+        <!-- RestAssured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -63,13 +63,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Allure rest-assured фильтр: пишет запрос/ответ в отчёт. Тоже используется в src/main/java -->
+        <!-- Allure rest-assured -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
         </dependency>
 
-        <!-- Нужен, чтобы Allure перехватывал @Step / @Description через аспекты -->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>

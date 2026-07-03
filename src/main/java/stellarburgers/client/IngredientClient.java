@@ -1,5 +1,6 @@
 package stellarburgers.client;
 
+import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 
@@ -11,6 +12,7 @@ import static stellarburgers.config.Config.INGREDIENTS;
 
 public class IngredientClient {
 
+    @Step("Получение списка ингредиентов")
     public Response getIngredients() {
         return given()
                 .filter(new AllureRestAssured())
@@ -20,7 +22,7 @@ public class IngredientClient {
                 .get(INGREDIENTS);
     }
 
-    // Возвращает id первых count ингредиентов — удобно для тела заказа
+    @Step("Получение id первых {count} ингредиентов")
     public List<String> getIngredientIds(int count) {
         return getIngredients()
                 .then()
